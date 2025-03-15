@@ -10,10 +10,14 @@ const Models = (function(){
         return todo;
     }
 
+    const CheckTodo = (index) =>{
+        todos[index].completed =  !todos[index].completed 
+    };
+
 
     // Récupère les tâche du tableau
     const GetTodos = () => todos;
 
 
-    return {addTodo, GetTodos};
+    return {addTodo, GetTodos, CheckTodo};
 })();

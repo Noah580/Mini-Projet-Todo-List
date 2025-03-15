@@ -16,7 +16,12 @@ const Controller = (function(){
         }
     }
 
-    return {init}
+    const HandleCheck = (index) =>{
+        Models.CheckTodo(index);
+        View.DisplayTodo(Models.GetTodos());
+    }
+
+    return {init, HandleCheck}
 })(Models, View);
 
 document.addEventListener('DOMContentLoaded', Controller.init);
